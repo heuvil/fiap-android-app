@@ -14,5 +14,8 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
+    <style name="Title1">
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>
