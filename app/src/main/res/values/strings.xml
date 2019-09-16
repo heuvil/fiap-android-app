@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">FIAP Android App</string>
+    <string name="app_version">App Version:</string>
+    <string name="app_developers">App developers:</string>
+    <string name="developer1">Bruno - 334070</string>
+    <string name="developer2">Caio - 333950</string>
+    <string name="developer3">Heuler - 333943</string>
+    <string name="developer4">Rafael - 334076</string>
+    <string name="e_mail">e-mail</string>
+    <string name="password">password</string>
+    <string name="stay_connected">Stay connected?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="login">Login</string>
 </resources>
