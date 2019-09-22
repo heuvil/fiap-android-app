@@ -1,6 +1,8 @@
 package br.com.fiap.app
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -14,7 +16,19 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        carregar()
+        val preferences = getSharedPreferences("user_preferences", Context.MODE_PRIVATE)
+        val stayLogged = preferences.getBoolean("stay_logged", false)
+        if (stayLogged) {
+            validateAndLog()
+        } else {
+            carregar()
+        }
+
+    }
+
+    private fun validateAndLog() {
+        val proximaTela = Intent(this@SplashActivity, AboutActivity::class.java)
+        startActivity(proximaTela)
     }
 
     private fun carregar() {

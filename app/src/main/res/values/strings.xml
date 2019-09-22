@@ -11,4 +11,8 @@
     <string name="stay_connected">Stay connected?</string>
     <string name="sign_in">Sign In</string>
     <string name="login">Login</string>
+    <string name="new_user">New User</string>
+    <string name="user_name">name</string>
+    <string name="phone_number">phone number</string>
+    <string name="confirm_password">confirm password</string>
 </resources>
