@@ -1,20 +1,36 @@
 package br.com.fiap.app
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
 
+    private lateinit var mAuth: FirebaseAuth
     private val TEMPO_AGUARDO_SPLASHSCREEN = 2000L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        carregar()
+        val preferences = getSharedPreferences("user_preferences", Context.MODE_PRIVATE)
+        val stayLogged = preferences.getBoolean("stay_logged", false)
+        if (stayLogged) {
+            validateAndLog()
+        } else {
+            carregar()
+        }
+    }
+
+    private fun validateAndLog() {
+        mAuth = FirebaseAuth.getInstance()
+        if (mAuth.currentUser != null) {
+            goToHome()
+        }
     }
 
     private fun carregar() {
@@ -31,4 +47,12 @@ class SplashActivity : AppCompatActivity() {
             finish()
         }, TEMPO_AGUARDO_SPLASHSCREEN)
     }
+
+    private fun goToHome() {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+        finish()
+    }
+
 }
