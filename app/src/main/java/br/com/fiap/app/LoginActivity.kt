@@ -30,9 +30,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         mAuth = FirebaseAuth.getInstance()
-//        if (mAuth.currentUser != null) {
-//            goToHome()
-//        }
+
         btLogin.setOnClickListener {
             mAuth.signInWithEmailAndPassword(
                 inputLoginEmail.text.toString(),
@@ -50,7 +48,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
         ivLogoLogin.setOnClickListener {
-//            Toast.makeText(this@LoginActivity, "You clicked on ImageView.", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, AboutActivity::class.java);
             startActivity(intent)
         }
@@ -74,13 +71,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToHome() {
-        val intent = Intent(this, CrudActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
-        finish()
-    }
-    private fun goToAbaut() {
-        val intent = Intent(this, AboutActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()

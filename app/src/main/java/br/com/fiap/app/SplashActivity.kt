@@ -2,7 +2,6 @@ package br.com.fiap.app
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -50,7 +49,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun goToHome() {
-        val intent = Intent(this, CrudActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()

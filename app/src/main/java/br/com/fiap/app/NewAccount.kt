@@ -1,6 +1,5 @@
 package br.com.fiap.app
 
-import android.app.Activity.RESULT_OK
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,7 +21,7 @@ class NewAccount : AppCompatActivity() {
 
         btCreate.setOnClickListener {
             if (inputPassword.text.toString() != inputPasswordConfirmation.text.toString()){
-                Toast.makeText(this, "Passord don't match!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Password don't match!", Toast.LENGTH_SHORT).show()
             }
             mAuth.createUserWithEmailAndPassword(
                 inputEmail.text.toString(),
@@ -30,7 +29,7 @@ class NewAccount : AppCompatActivity() {
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
                     saveInRealTimeDatabase()
-                    val intent = Intent(this, AboutActivity::class.java);
+                    val intent = Intent(this, MainActivity::class.java);
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@NewAccount, it.exception?.message,

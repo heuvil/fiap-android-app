@@ -15,4 +15,5 @@
     <string name="user_name">name</string>
     <string name="phone_number">phone number</string>
     <string name="confirm_password">confirm password</string>
+    <string name="about">about</string>
 </resources>
