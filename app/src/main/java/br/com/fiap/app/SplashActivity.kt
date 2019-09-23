@@ -7,10 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
 
+    private lateinit var mAuth: FirebaseAuth
     private val TEMPO_AGUARDO_SPLASHSCREEN = 2000L
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,12 +25,13 @@ class SplashActivity : AppCompatActivity() {
         } else {
             carregar()
         }
-
     }
 
     private fun validateAndLog() {
-        val proximaTela = Intent(this@SplashActivity, AboutActivity::class.java)
-        startActivity(proximaTela)
+        mAuth = FirebaseAuth.getInstance()
+        if (mAuth.currentUser != null) {
+            goToHome()
+        }
     }
 
     private fun carregar() {
@@ -45,4 +48,12 @@ class SplashActivity : AppCompatActivity() {
             finish()
         }, TEMPO_AGUARDO_SPLASHSCREEN)
     }
+
+    private fun goToHome() {
+        val intent = Intent(this, CrudActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+        finish()
+    }
+
 }
