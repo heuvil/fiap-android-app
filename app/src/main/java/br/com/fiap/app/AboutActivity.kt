@@ -18,7 +18,7 @@ class AboutActivity : AppCompatActivity() {
             val editor = preferences.edit()
             editor.putBoolean("stay_logged", false)
             editor.apply()
-            Toast.makeText(this, "No more stay connected", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "variable Stay Connected set off", Toast.LENGTH_SHORT).show()
         }
     }
 }

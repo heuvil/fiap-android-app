@@ -20,20 +20,36 @@ class NewAccount : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
         btCreate.setOnClickListener {
-            if (inputPassword.text.toString() != inputPasswordConfirmation.text.toString()){
-                Toast.makeText(this, "Password don't match!", Toast.LENGTH_SHORT).show()
-            }
-            mAuth.createUserWithEmailAndPassword(
-                inputEmail.text.toString(),
-                inputPassword.text.toString()
-            ).addOnCompleteListener {
-                if (it.isSuccessful) {
-                    saveInRealTimeDatabase()
-                    val intent = Intent(this, MainActivity::class.java);
-                    startActivity(intent)
+            var lengthEmail: Int = inputEmail.text.length
+            var lengthSenha: Int = inputPassword.text.length
+            if (lengthEmail == 0) {
+                Toast.makeText(this, getString(R.string.invalid_email), Toast.LENGTH_SHORT).show()
+            } else {
+                if (lengthSenha < 6) {
+                    Toast.makeText(this, getString(R.string.short_password), Toast.LENGTH_SHORT)
+                        .show()
                 } else {
-                    Toast.makeText(this@NewAccount, it.exception?.message,
-                        Toast.LENGTH_SHORT).show()
+
+                    if (inputPassword.text.toString() != inputPasswordConfirmation.text.toString()) {
+                        Toast.makeText(this, "Password don't match!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        mAuth.createUserWithEmailAndPassword(
+                            inputEmail.text.toString(),
+                            inputPassword.text.toString()
+                        ).addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                saveInRealTimeDatabase()
+                                val intent = Intent(this, MainActivity::class.java);
+                                startActivity(intent)
+                            } else {
+                                Toast.makeText(
+                                    this@NewAccount, it.exception?.message,
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+
+                        }
+                    }
                 }
             }
         }
