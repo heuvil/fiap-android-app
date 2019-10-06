@@ -9,4 +9,6 @@ interface ProductService {
     @GET("product")
     fun getAllProductList() : Call<ArrayList<Product>>
 
+
+
 }

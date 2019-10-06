@@ -15,7 +15,7 @@ class ProductAdapter(private var productList: MutableList<Product>) : RecyclerVi
         val inflatter = LayoutInflater.from(context)
         val shouldAttachToParentImmediately = false
 
-        val view = inflatter.inflate(R.layout.activity_product_list, viewGroup, shouldAttachToParentImmediately)
+        val view = inflatter.inflate(R.layout.activity_product, viewGroup, shouldAttachToParentImmediately)
 
         return ProductViewHolder(view)
 
@@ -40,7 +40,7 @@ class ProductAdapter(private var productList: MutableList<Product>) : RecyclerVi
 
         override fun onClick(v: View?) {
             val context = itemView.context
-            val intent = Intent(context, Product::class.java)
+            val intent = Intent(context, br.com.fiap.app.Product::class.java)
             intent.putExtra("Id", id)
             intent.putExtra("productName", name.text.toString())
             context.startActivity(intent)
