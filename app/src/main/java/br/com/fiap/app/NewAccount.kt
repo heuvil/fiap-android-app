@@ -31,7 +31,7 @@ class NewAccount : AppCompatActivity() {
                 } else {
 
                     if (inputPassword.text.toString() != inputPasswordConfirmation.text.toString()) {
-                        Toast.makeText(this, "Password don't match!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getString(R.string.pass_dont_match), Toast.LENGTH_SHORT).show()
                     } else {
                         mAuth.createUserWithEmailAndPassword(
                             inputEmail.text.toString(),
@@ -63,14 +63,14 @@ class NewAccount : AppCompatActivity() {
         .setValue(user)
         .addOnCompleteListener {
             if (it.isSuccessful) {
-                Toast.makeText(this, "Usuário criado com sucesso", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.user_created), Toast.LENGTH_SHORT).show()
                 val returnIntent = Intent()
                 returnIntent.putExtra("email", inputEmail.text.toString())
                 setResult(RESULT_OK, returnIntent)
                 finish()
                 finish()
             } else {
-                Toast.makeText(this, "Erro ao criar o usuário", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.user_error), Toast.LENGTH_SHORT).show()
             }
         }
     }
