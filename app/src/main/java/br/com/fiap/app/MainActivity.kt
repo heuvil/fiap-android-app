@@ -12,7 +12,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btAbout.setOnClickListener{
-            val intent = Intent(this, AboutActivity::class.java);
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
+        }
+
+        btProductList.setOnClickListener{
+            val intent = Intent(this, ProductList::class.java)
             startActivity(intent)
         }
     }
