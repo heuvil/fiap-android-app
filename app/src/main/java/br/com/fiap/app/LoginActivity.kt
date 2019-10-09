@@ -32,21 +32,30 @@ class LoginActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
         btLogin.setOnClickListener {
-            mAuth.signInWithEmailAndPassword(
-                inputLoginEmail.text.toString(),
-                inputLoginPassword.text.toString()
-            ).addOnCompleteListener {
-                if (it.isSuccessful) {
-                    goToHome()
+            var tamanhoEmail: Int = inputLoginEmail.text.length
+            var tamanhoSenha: Int = inputLoginPassword.text.length
+            if (tamanhoEmail == 0) {
+                Toast.makeText(this, getString(R.string.invalid_email), Toast.LENGTH_SHORT).show()
+            } else{
+                if (tamanhoSenha == 0) {
+                    Toast.makeText(this, getString(R.string.invalid_password), Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(
-                        this@LoginActivity, it.exception?.message,
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    mAuth.signInWithEmailAndPassword(
+                        inputLoginEmail.text.toString(),
+                        inputLoginPassword.text.toString()
+                    ).addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            goToHome()
+                        } else {
+                            Toast.makeText(
+                                this@LoginActivity, it.exception?.message,
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
                 }
             }
         }
-
         ivLogoLogin.setOnClickListener {
             val intent = Intent(this, AboutActivity::class.java);
             startActivity(intent)

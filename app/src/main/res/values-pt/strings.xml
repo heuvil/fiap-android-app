@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aplicativo Android FIAP</string>
+    <string name="app_developers">desenvolvedores</string>
+    <string name="app_version">versão do aplicativo</string>
+    <string name="confirm_password">confirmar a senha</string>
+    <string name="invalid_email">e-mail inválido</string>
+    <string name="invalid_password">senha inválida</string>
+    <string name="log_in">Entrar</string>
+    <string name="new_user">Novo usuário</string>
+    <string name="password">senha</string>
+    <string name="phone_number">numero do telefone</string>
+    <string name="short_password">senha deve ter ao menos 6 caracteres</string>
+    <string name="sign_up">cadastrar</string>
+    <string name="stay_connected">manter conectado?</string>
+    <string name="user_name">nome</string>
+    <string name="about">sobre</string>
+    <string name="pass_dont_match">senha não confere!</string>
+    <string name="stay_connected_off">variavel para manter conectado desligada</string>
+    <string name="user_created">Usuário criado com sucesso</string>
+    <string name="user_error">Erro ao criar o usuário</string>
+</resources>

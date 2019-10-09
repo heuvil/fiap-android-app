@@ -1,19 +1,26 @@
 <resources>
     <string name="app_name">FIAP Android App</string>
     <string name="app_version">App Version:</string>
+    <string name="about">about</string>
     <string name="app_developers">App developers:</string>
-    <string name="developer1">Bruno - 334070</string>
-    <string name="developer2">Caio - 333950</string>
-    <string name="developer3">Heuler - 333943</string>
-    <string name="developer4">Rafael - 334076</string>
-    <string name="e_mail">e-mail</string>
+    <string name="developer1" translatable="false">Bruno - 334070</string>
+    <string name="developer2" translatable="false">Caio - 333950</string>
+    <string name="developer3" translatable="false">Heuler - 333943</string>
+    <string name="developer4" translatable="false">Rafael - 334076</string>
+    <string name="e_mail" translatable="false">e-mail</string>
     <string name="password">password</string>
     <string name="stay_connected">Stay connected?</string>
-    <string name="sign_in">Sign In</string>
-    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log in</string>
     <string name="new_user">New User</string>
     <string name="user_name">name</string>
     <string name="phone_number">phone number</string>
     <string name="confirm_password">confirm password</string>
-    <string name="about">about</string>
+    <string name="invalid_email">Invalid e-mail</string>
+    <string name="invalid_password">Invalid Password</string>
+    <string name="short_password">password must have at least 6 characters</string>
+    <string name="stay_connected_off">variable Stay Connected set off</string>
+    <string name="pass_dont_match">Password don\'t match!</string>
+    <string name="user_created">successfully created user</string>
+    <string name="user_error">Error creating user</string>
 </resources>
