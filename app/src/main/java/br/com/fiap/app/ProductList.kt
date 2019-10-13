@@ -1,10 +1,11 @@
 package br.com.fiap.app
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.fiap.app.adapter.ProductAdapter
 import br.com.fiap.app.model.Product
@@ -16,7 +17,9 @@ import retrofit2.Response
 
 class ProductList : AppCompatActivity() {
 
-    private var productList: ArrayList<Product> = ArrayList()
+    val NEW_PRODUCT = 1
+
+    private var productList: MutableList<Product> = ArrayList()
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var adapter: ProductAdapter
 
@@ -28,6 +31,20 @@ class ProductList : AppCompatActivity() {
 
         loadAllProducts()
 
+        btNewProduct.setOnClickListener{
+            val intent = Intent(this, NewProductActivity::class.java)
+            startActivityForResult(intent,NEW_PRODUCT)
+        }
+
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == NEW_PRODUCT) {
+            if (resultCode == Activity.RESULT_OK) {
+                loadAllProducts()
+            }
+        }
     }
 
 
@@ -38,14 +55,14 @@ class ProductList : AppCompatActivity() {
                                     response: Response<ArrayList<Product>?>)
             {
                 response?.body()?.let{
-                    productList = it
+                    productList = it.sortedWith(compareBy(Product::id)).toMutableList()
                     fillProducts()
                 }
             }
 
             override fun onFailure(call: Call<ArrayList<Product>?>,
                                    t: Throwable?){
-                Toast.makeText(applicationContext, "Failed to load Product List", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Failed to load ViewProduct List", Toast.LENGTH_SHORT).show()
                 Log.e("onFailure error", t?.message)
             }
 
@@ -57,6 +74,7 @@ class ProductList : AppCompatActivity() {
         recyclerViewProducts.layoutManager = linearLayoutManager
         adapter = ProductAdapter(productList)
         recyclerViewProducts.adapter = adapter
+        adapter.notifyDataSetChanged()
     }
 
 }
