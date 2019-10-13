@@ -20,6 +20,8 @@
     <string name="user_created">Usuário criado com sucesso</string>
     <string name="user_error">Erro ao criar o usuário</string>
     <string name="logo">Logo</string>
-    <string name="product_created">Product created successfully!</string>
-    <string name="product_deleted">Product deleted!</string>
+    <string name="product_created">Produto criado com sucesso!</string>
+    <string name="product_deleted">Produto deletado!</string>
+    <string name="logout">Encerrar sessão</string>
+    <string name="exit">Sair do app</string>
 </resources>
