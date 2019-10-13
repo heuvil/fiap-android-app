@@ -12,7 +12,7 @@
         android:id="@+id/tvProductId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ID"
+        android:text="@string/id"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginStart="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/tvProductName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Product Name"
+        android:text="@string/product_name"
         android:layout_marginStart="12dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="Update"
+        android:text="@string/update"
         app:layout_constraintStart_toEndOf="@+id/tvProductName"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Delete"
+        android:text="@string/delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btUpdateProduct"
         app:layout_constraintTop_toTopOf="@+id/btUpdateProduct" />

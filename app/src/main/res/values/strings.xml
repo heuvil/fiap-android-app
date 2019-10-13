@@ -28,4 +28,16 @@
     <string name="product_deleted">Product deleted!</string>
     <string name="logout">Logout</string>
     <string name="exit">Exit from App</string>
+    <string name="id">ID</string>
+    <string name="product_name">Product Name</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="update_product">Update Product</string>
+    <string name="save">Save</string>
+    <string name="image_of_android_cellphone">Image of android cellphone</string>
+    <string name="product_list">Product List</string>
+    <string name="new_product">New Product</string>
+    <string name="insert_your_new_product">Insert Your New Product</string>
+    <string name="name">Name</string>
+    <string name="info">Info:</string>
 </resources>

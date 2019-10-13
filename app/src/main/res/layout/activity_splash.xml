@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Image of android cellphone"
+        android:contentDescription="@string/image_of_android_cellphone"
         app:srcCompat="@drawable/logo_image" />
 
     <TextView

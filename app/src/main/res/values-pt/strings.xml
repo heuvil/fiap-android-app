@@ -9,7 +9,7 @@
     <string name="log_in">Entrar</string>
     <string name="new_user">Novo usuário</string>
     <string name="password">senha</string>
-    <string name="phone_number">numero do telefone</string>
+    <string name="phone_number">número do telefone</string>
     <string name="short_password">senha deve ter ao menos 6 caracteres</string>
     <string name="sign_up">cadastrar</string>
     <string name="stay_connected">manter conectado?</string>
@@ -24,4 +24,16 @@
     <string name="product_deleted">Produto deletado!</string>
     <string name="logout">Encerrar sessão</string>
     <string name="exit">Sair do app</string>
+    <string name="delete">Apagar</string>
+    <string name="id">cod</string>
+    <string name="image_of_android_cellphone">Imagem de celular android</string>
+    <string name="insert_your_new_product">Insera seu novo produto</string>
+    <string name="name">Nome</string>
+    <string name="new_product">Novo produto</string>
+    <string name="product_list">Lista de Produtos</string>
+    <string name="product_name">Nome do produto</string>
+    <string name="save">Gravar</string>
+    <string name="update">Atualizar</string>
+    <string name="update_product">Atualizar Produto</string>
+    <string name="info">Informação:</string>
 </resources>
