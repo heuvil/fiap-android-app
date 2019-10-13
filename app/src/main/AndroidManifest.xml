@@ -10,11 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".NewProductActivity"></activity>
-        <activity android:name=".Product" />
+        <activity android:name=".ViewProduct" />
         <activity android:name=".ProductList" />
         <activity android:name=".NewAccount" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".UpdateProductActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/FullScreen">

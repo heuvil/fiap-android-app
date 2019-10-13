@@ -23,4 +23,7 @@
     <string name="pass_dont_match">Password don\'t match!</string>
     <string name="user_created">successfully created user</string>
     <string name="user_error">Error creating user</string>
+    <string name="logo">Logo</string>
+    <string name="product_created">Product created successfully!</string>
+    <string name="product_deleted">Product deleted!</string>
 </resources>

@@ -19,4 +19,7 @@
     <string name="stay_connected_off">variavel para manter conectado desligada</string>
     <string name="user_created">Usuário criado com sucesso</string>
     <string name="user_error">Erro ao criar o usuário</string>
+    <string name="logo">Logo</string>
+    <string name="product_created">Product created successfully!</string>
+    <string name="product_deleted">Product deleted!</string>
 </resources>
