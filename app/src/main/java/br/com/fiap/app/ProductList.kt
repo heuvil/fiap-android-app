@@ -19,7 +19,7 @@ class ProductList : AppCompatActivity() {
 
     val NEW_PRODUCT = 1
 
-    private var productList: ArrayList<Product> = ArrayList()
+    private var productList: MutableList<Product> = ArrayList()
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var adapter: ProductAdapter
 
@@ -55,7 +55,7 @@ class ProductList : AppCompatActivity() {
                                     response: Response<ArrayList<Product>?>)
             {
                 response?.body()?.let{
-                    productList = it.sortedWith(compareBy(Product::id)) as ArrayList<Product>
+                    productList = it.sortedWith(compareBy(Product::id)).toMutableList()
                     fillProducts()
                 }
             }

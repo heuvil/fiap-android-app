@@ -59,7 +59,6 @@ class ProductAdapter(private var productList: MutableList<Product>) : RecyclerVi
                 intent.putExtra("productId",id)
                 intent.putExtra("productName",name)
                 (holder.itemView.context as Activity).startActivityForResult(intent, UPDATE_PRODUCT)
-                notifyDataSetChanged()
              }
         }
     }
