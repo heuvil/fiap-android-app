@@ -19,18 +19,16 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         val preferences = getSharedPreferences("user_preferences", Context.MODE_PRIVATE)
         val stayLogged = preferences.getBoolean("stay_logged", false)
-        if (stayLogged) {
-            validateAndLog()
+        if (stayLogged && validateAndLog()) {
+            goToHome()
         } else {
             carregar()
         }
     }
 
-    private fun validateAndLog() {
+    private fun validateAndLog(): Boolean {
         mAuth = FirebaseAuth.getInstance()
-        if (mAuth.currentUser != null) {
-            goToHome()
-        }
+        return mAuth.currentUser != null
     }
 
     private fun carregar() {
